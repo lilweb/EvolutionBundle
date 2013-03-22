@@ -17,7 +17,7 @@ use Lilweb\EvolutionBundle\Model\Sql\EvolutionDowns;
 use Lilweb\EvolutionBundle\Exception\EvolutionParserException;
 
 /**
- *
+ * Parse un fichier pour peupler un objet Evolution.
  */
 class EvolutionParser
 {
