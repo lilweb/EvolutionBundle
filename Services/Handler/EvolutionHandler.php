@@ -35,7 +35,7 @@ class EvolutionHandler
      * Constructor.
      *
      * @param \Lilweb\EvolutionBundle\Services\Handler\Logger $logger
-     * @param \Doctrine\ORM\EntityManager                          $connection
+     * @param \Doctrine\ORM\EntityManager                     $connection
      */
     public function __construct(Logger $logger, EntityManager $em)
     {
@@ -45,8 +45,8 @@ class EvolutionHandler
     }
 
     /**
-     * @param \Symfony\Component\Console\Output\OutputInterface              $output
-     * @param \Lilweb\EvolutionBundle\Model\EvolutionContainer $container
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param \Lilweb\EvolutionBundle\Model\EvolutionContainer  $container
      */
     public function handle(OutputInterface $output, EvolutionContainer $container)
     {

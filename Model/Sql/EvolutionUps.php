@@ -7,7 +7,7 @@
 namespace Lilweb\EvolutionBundle\Model\Sql;
 
 /**
- *
+ * Représente les évolutions en avant.
  */
 class EvolutionUps extends EvolutionSqlEntity
 {

@@ -33,8 +33,8 @@ class EvolutionBuilder
     /**
      * Constructor.
      *
-     * @param string                                                       $kernelRootDir
-     * @param \Monolog\Logger                                              $logger
+     * @param string                                                  $kernelRootDir
+     * @param \Monolog\Logger                                         $logger
      * @param \Lilweb\EvolutionBundle\Services\Parser\EvolutionParser $parser
      */
     public function __construct($kernelRootDir, Logger $logger, EvolutionParser $parser)
@@ -48,7 +48,7 @@ class EvolutionBuilder
      * Builds the evolution container.
      *
      * @param \Symfony\Component\Console\Output\OutputInterface $output
-     * @param \Lilweb\EvolutionBundle\Entity\Evolution     $lastVersion
+     * @param \Lilweb\EvolutionBundle\Entity\Evolution          $lastVersion
      *
      * @return \Lilweb\EvolutionBundle\Model\EvolutionContainer
      */
