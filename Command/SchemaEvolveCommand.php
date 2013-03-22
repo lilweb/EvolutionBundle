@@ -21,7 +21,7 @@ class SchemaEvolveCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('lilweb:schema:evolve')
+            ->setName('lilweb:evolutions:apply')
             ->setDescription('Lance l\'évolution de la base de données.');
     }
 
