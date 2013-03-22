@@ -1,0 +1,24 @@
+{
+    "name": "lilweb/evolution-bundle",
+    "type": "symfony-bundle",
+    "description": "Easy bundle for database evolution",
+    "keywords": ["database", "evolution"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name" : "Geoffrey BRIER",
+            "email": "geoffrey.brier@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/symfony": "2.1.8",
+        "symfony/monolog-bundle": "2.1.8",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Lilweb\\EvolutionBundle": "" }
+    },
+    "target-dir": "Lilweb/EvolutionBundle"
+}
