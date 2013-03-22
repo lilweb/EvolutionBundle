@@ -15,5 +15,4 @@ class EvolutionHandlerException extends \Exception
     {
         throw new static($reason);
     }
-
 }
