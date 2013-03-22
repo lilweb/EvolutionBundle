@@ -6,7 +6,7 @@ parameters:
 services:
     lilweb.evolution_builder:
         class: %evolution_builder.class%
-        arguments: [ %kernel.root_dir%, "@logger", "@lilweb.evolution_parser" ]
+        arguments: [ %lilweb.evolution_dir%, "@logger", "@lilweb.evolution_parser" ]
 
     lilweb.evolution_parser:
         class: %evolution_parser.class%

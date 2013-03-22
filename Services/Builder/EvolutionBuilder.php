@@ -21,7 +21,7 @@ use Lilweb\EvolutionBundle\Services\Parser\EvolutionParser;
 class EvolutionBuilder
 {
     /** @var string */
-    private $kernelRootDir;
+    private $evolutionDir;
 
     /** @var \Monolog\Logger */
     private $logger;
@@ -32,13 +32,13 @@ class EvolutionBuilder
     /**
      * Constructor.
      *
-     * @param string                                                  $kernelRootDir
+     * @param string                                                  $evolutionDir
      * @param \Monolog\Logger                                         $logger
      * @param \Lilweb\EvolutionBundle\Services\Parser\EvolutionParser $parser
      */
-    public function __construct($kernelRootDir, Logger $logger, EvolutionParser $parser)
+    public function __construct($evolutionDir, Logger $logger, EvolutionParser $parser)
     {
-        $this->kernelRootDir = $kernelRootDir;
+        $this->evolutionDir = $evolutionDir;
         $this->logger = $logger;
         $this->parser = $parser;
     }
@@ -57,9 +57,9 @@ class EvolutionBuilder
         $finder = new Finder();
 
         $files = $finder
-            ->name('evolution-*.sql')
+            ->name('*.sql')
             ->depth('== 0')
-            ->in($this->kernelRootDir.'/evolutions/')
+            ->in($this->evolutionDir)
             ->sortByName();
 
         $this->logger->debug('Construction du container d\'évolution: en cours');
