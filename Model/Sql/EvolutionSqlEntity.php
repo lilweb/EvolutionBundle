@@ -7,7 +7,7 @@
 namespace Lilweb\EvolutionBundle\Model\Sql;
 
 /**
- *
+ * Représente une evolution SQL. 
  */
 abstract class EvolutionSqlEntity
 {
