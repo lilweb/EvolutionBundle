@@ -15,7 +15,6 @@ use Lilweb\EvolutionBundle\Entity\Evolution;
 use Lilweb\EvolutionBundle\Model\EvolutionContainer;
 use Lilweb\EvolutionBundle\Services\Parser\EvolutionParser;
 
-
 /**
  * Builds the EvolutionContainer.
  */
