@@ -67,7 +67,7 @@ class EvolutionBuilder
         $output->writeln("\t".'Construction du container d\'évolution: en cours');
 
         foreach ($files as $file) {
-            if (preg_match('/evolution-([\d]+).sql/', $file->getFilename(), $match)) {
+            if (preg_match('/([\d]+).sql/', $file->getFilename(), $match)) {
                 if (!ctype_digit($match[1]) || empty($match)) {
                     throw new \Exception($match[1].' n\'est pas un numéro de version correct');
                 }

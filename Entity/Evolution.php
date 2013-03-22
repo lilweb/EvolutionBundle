@@ -15,15 +15,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Evolution
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type = "integer")
-     * @ORM\GeneratedValue
-     */
-    private $id;
-
-    /**
      * @var integer The version applied.
      *
+     * @ORM\Id
      * @ORM\Column(type = "integer")
      */
     private $version;
@@ -45,14 +39,6 @@ class Evolution
     public function __construct()
     {
         $this->executionDate = new \DateTime();
-    }
-
-    /**
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
