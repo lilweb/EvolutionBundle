@@ -1,0 +1,17 @@
+parameters:
+   evolution_builder.class: Lilweb\EvolutionBundle\Services\Builder\EvolutionBuilder
+   evolution_parser.class: Lilweb\EvolutionBundle\Services\Parser\EvolutionParser
+   evolution_handler.class: Lilweb\EvolutionBundle\Services\Handler\EvolutionHandler
+
+services:
+    lilweb.evolution_builder:
+        class: %evolution_builder.class%
+        arguments: [ %kernel.root_dir%, "@logger", "@lilweb.evolution_parser" ]
+
+    lilweb.evolution_parser:
+        class: %evolution_parser.class%
+        arguments: [ "@logger" ]
+
+    lilweb.evolution_handler:
+        class: %evolution_handler.class%
+        arguments: [ "@logger", "@doctrine.orm.entity_manager" ]
