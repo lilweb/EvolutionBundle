@@ -23,7 +23,7 @@ class EvolutionRepository extends EntityRepository
         return $this
             ->createQueryBuilder('e')
             ->select('e')
-            ->orderBy('e.id', 'DESC')
+            ->orderBy('e.version', 'DESC')
             ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult();
