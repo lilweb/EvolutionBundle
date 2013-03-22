@@ -4,8 +4,6 @@ parameters:
    evolution_handler.class: Lilweb\EvolutionBundle\Services\Handler\EvolutionHandler
 
 services:
-    # TODO/Bug: Argument non pris en compte pour les commandes, de ce fait on ne peut pas
-    # utiliser le channel des logs ...
     lilweb.evolution_builder:
         class: %evolution_builder.class%
         arguments: [ %kernel.root_dir%, "@logger", "@lilweb.evolution_parser" ]
