@@ -36,13 +36,15 @@ Dans app/AppKernel.php:
 
 ## 3. Configurer le bundle
 
-Définissez le répertoire où les évolutions sont stockées:
+Vous pouvez surcharger le répertoire où les évolutions sont stockées:
 ```
 # app/config/config.yml
 lilweb_evolution:
     evolution_dir: /full/path/to/directory
 
 ```
+
+NB: Par défaut, celui-ci équivaut à `%kernel.root_dir/evolutions`.
 
 ## 4. Utilisation
 

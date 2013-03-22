@@ -6,11 +6,11 @@
  */
 namespace Lilweb\EvolutionBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\ConfigurationInterface,
-    Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
- * Configuration for the evoluion extension.
+ * Configuration for the evolution extension.
  */
 class Configuration implements ConfigurationInterface
 {
@@ -24,7 +24,9 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('lilweb_evolution');
         $rootNode
             ->children()
-                ->scalarNode('evolution_dir')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('evolution_dir')
+                    ->defaultValue('%kernel.root_dir%/evolutions')
+                ->end()
             ->end();
 
         return $treeBuilder;
