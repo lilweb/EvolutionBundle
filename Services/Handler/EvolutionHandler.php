@@ -62,7 +62,7 @@ class EvolutionHandler
                 $stmts = explode(';', $evolution->getUps()->getSql());
 
                 foreach ($stmts as $stmt) {
-                    if ($this->connection->exec($stmt) === false) {
+                    if (trim($stmt) != '' && $this->connection->exec($stmt) === false) {
                         throw EvolutionHandlerException::evolutionFailure($this->connection->errorInfo());
                     }
                 }
