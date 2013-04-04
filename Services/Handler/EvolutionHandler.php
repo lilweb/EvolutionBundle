@@ -59,10 +59,12 @@ class EvolutionHandler
                 $output->write("\t".'Application de l\'évolution #'.$evolution->getVersion().' ... ');
 
                 $evolutionStack[] = $evolution;
-                $stmt = $evolution->getUps()->getSql();
+                $stmts = explode(';', $evolution->getUps()->getSql());
 
-                if ($this->connection->exec($stmt) === false) {
-                    throw EvolutionHandlerException::evolutionFailure($this->connection->errorInfo());
+                foreach ($stmts as $stmt) {
+                    if ($this->connection->exec($stmt) === false) {
+                        throw EvolutionHandlerException::evolutionFailure($this->connection->errorInfo());
+                    }
                 }
 
                 $output->writeln('<info>OK</info>');
@@ -88,10 +90,11 @@ class EvolutionHandler
                 $this->logger->debug('Rollback de l\'évolution #'.$evolution->getVersion());
                 $output->writeln("\t".'Rollback de l\'évolution #'.$evolution->getVersion());
 
-                $stmt = $evolution->getDowns()->getSql();
-
+                $stmts = explode(';', $evolution->getDowns()->getSql());
                 try {
-                    $this->connection->exec($stmt);
+                    foreach ($stmts as $stmt) {
+                        $this->connection->exec($stmt);
+                    }
                 } catch (\Exception $rollbackException) {
                     $output->writeln("\t<comment>Echec du rollback (".$rollbackException->getMessage().")</comment>");
                 }
@@ -99,6 +102,5 @@ class EvolutionHandler
 
             throw $e;
         }
-
     }
 }
